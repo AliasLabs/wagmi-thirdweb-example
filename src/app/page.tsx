@@ -54,7 +54,7 @@ function App() {
 					onDisconnect: async () => {
 						await disconnectAsync();
 					},
-					switchChain: async (chain) => {
+					switchChain: async (chain: any) => {
 						await switchChainAsync({ chainId: chain.id as any });
 					},
 				});
@@ -107,7 +107,7 @@ function App() {
 			</div>
 			<div>
 				<h2>Connect</h2>
-				{connectors.map((connector) => (
+				{connectors.map((connector: any) => (
 					<button
 						key={connector.uid}
 						onClick={() => connect({ connector })}
@@ -161,7 +161,7 @@ function App() {
 								tokenId: 0n,
 							});
 						}}
-						onError={(e) => console.error(e)}
+						onError={(e: any) => console.error(e)}
 					>
 						Mint
 					</TransactionButton>
@@ -173,7 +173,7 @@ function App() {
 				</div>
 			)}
 			<div style={{ padding: "100px 0px" }}>
-				<a href="https://github.com/thirdweb-example/wagmi-thirdweb">
+				<a href="https://github.com/AliasLabs/wagmi-thirdweb-example">
 					View code on Github
 				</a>
 			</div>
